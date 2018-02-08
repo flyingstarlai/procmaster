@@ -29,6 +29,7 @@
     "mongoose": "^4.8.6",
     "morgan": "^1.8.2",
     "mysql2": "^1.5.1",
+    "react-scripts-css-modules": "^0.9.4-patch1",
     "winston": "^2.3.1",
     "winston-daily-rotate-file": "^1.4.6"
   },

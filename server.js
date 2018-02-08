@@ -4,10 +4,9 @@ import cors from 'cors';
 import morgan from 'morgan';
 import logger from './core/logger/app-logger';
 import config from './core/config/config.dev';
-import procedures from './routes/procedures.route';
+import api from './routes/index.route';
 import connectToDb from './db/connect';
 import initialConnection from './db/mysql.connect';
-import proc from './routes/procs.route';
 
 const port = config.serverPort;
 logger.stream = {
@@ -24,10 +23,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan('dev', { stream: logger.stream }));
 
-initialConnection((conn) => {
-  app.use('/api/v1/exec', proc({ conn }));
-});
-app.use('/api/v1/repo', procedures);
+// initialConnection((conn) => {
+//   app.use('/api/v1/sp', proc({ conn }));
+// });
+app.use('/api/v1', api);
 
 // Index route
 app.get('/', (req, res) => {
