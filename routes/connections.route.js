@@ -20,15 +20,15 @@ router.delete('/connections', (req, res) => {
   connectionController.deleteConnection(req, res);
 });
 
-router.post('/connections/proc/:name', (req, res) => {
+router.post('/connections/:name/procedure', (req, res) => {
   connectionController.addProcedureToConnection(req, res);
 });
 
-router.delete('/connections/proc/:name', (req, res) => {
+router.delete('/connections/:name/procedure', (req, res) => {
   connectionController.deleteProcedureFromConnection(req, res);
 });
 
-router.put('/connections/proc/:name', (req, res) => {
+router.put('/connections/:name/procedure', (req, res) => {
   connectionController.updateProcedureFromConnection(req, res);
 });
 export default router;

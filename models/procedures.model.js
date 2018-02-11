@@ -3,7 +3,6 @@ import ParameterSchema from './parameters.model';
 
 const ProcedureSchema = new mongoose.Schema({
   spId: { type: String, required: true, unique: true, index: true },
-  connection: { type: Schema.Types.ObjectId, ref: 'Connection' },
   name: { type: String, required: true },
   description: { type: String },
   parameters: [ParameterSchema],
